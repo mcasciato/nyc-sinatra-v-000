@@ -1,12 +1,12 @@
 <h1>Enter a New Figure:</h1>
 
-<form action="figures" method="post">
+<form action="/figures" method="post">
   <label for="figure[name]">Figure Name:</label>
     <input id="figure_name" type="text" name="figure[name]"><br><br>
 
     <h2>Select a Title:</h2>
     <% Title.all.each do |title| %>
-      <input type="checkbox" name="figure[title_ids][]" value="<%= title.id %>" id=title_"<%= title.name%>">
+      <input type="checkbox" name="figure[title_ids][]" value="<%= title.id %>" id="title_<%= title.id%>">
       <%= title.name %></input>
       <% end %>
 
@@ -15,7 +15,7 @@
 
     <h2>Select a Landmark:</h2>
     <% Landmark.all.each do |landmark| %>
-      <input type="checkbox" name="figure[landmark_ids][]" value="<%= landmark.id %>" id=landmark_"<%= landmark.name%>">
+      <input type="checkbox" name="figure[landmark_ids][]" value="<%= landmark.id %>" id="landmark_<%= landmark.id%>">
       <%= landmark.name %></input>
       <% end %>
 
